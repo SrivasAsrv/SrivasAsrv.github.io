@@ -101,9 +101,29 @@ body {
     margin: -3.2rem -3rem 2rem -3rem;
     border-radius: 16px 16px 0 0;
     display: flex;
-    justify-content: space-between; /* Adjust for hamburger */
+    justify-content: flex-end; /* Move contents to right */
     align-items: center; /* Vertically align items */
     border-bottom: 1px solid var(--bg-gradient-end); /* Use variable */
+    gap: 1.2rem; /* Add gap between favicon and navbar-right */
+}
+
+/* New: group nav links, hamburger, and favicon on right */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Style for favicon in navbar */
+.navbar-favicon {
+    width: 28px;
+    height: 28px;
+    margin-left: 0;
+    margin-right: 0.8rem; /* Add space to the right of favicon */
+    border-radius: 6px;
+    box-shadow: 0 1px 4px var(--shadow-soft);
+    background: white;
+    object-fit: contain;
 }
 
 /* Container for nav links */
@@ -638,7 +658,19 @@ footer {
     .navbar {
         padding: 0.7rem 1.5rem; /* Adjust padding for hamburger */
         margin: -2rem -1.5rem 1.5rem -1.5rem;
+        justify-content: flex-end; /* Keep right alignment on mobile */
         /* gap removed, justify-content handles spacing */
+        gap: 0.8rem;
+    }
+
+    .navbar-right {
+        gap: 0.8rem;
+    }
+
+    .navbar-favicon {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
     }
 
     .hamburger {
