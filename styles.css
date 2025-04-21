@@ -155,18 +155,20 @@ body {
     height: 3px;
     background-color: var(--text-secondary); /* Use variable */
     border-radius: 2px;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Refined transition */
+    transform-origin: center;
 }
 
 /* Hamburger animation */
+/* Modify the X transformation for a different look */
 .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(5px) rotate(20deg);
 }
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-5px) rotate(-20deg);
 }
 
 /* Focus style for hamburger */
@@ -330,7 +332,7 @@ h1 {
     transform: translateY(-3px);
 }
 
-.socials a::after {
+socials a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -549,6 +551,64 @@ footer {
     outline: 2px solid var(--focus-outline);
     outline-offset: 2px;
     background-color: var(--back-to-top-hover-bg); /* Ensure focus is visible */
+}
+
+.profile-pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+}
+
+.collab-btn {
+    margin: 1.2rem 0 2rem 0;
+    padding: 0.85rem 2.2rem;
+    font-size: 1.15rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, var(--text-link) 0%, var(--accent-highlight) 100%);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 18px var(--shadow-medium);
+    cursor: pointer;
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, background 0.3s;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    animation: collabPopIn 0.8s cubic-bezier(.4,2,.6,1) 0.7s both;
+}
+
+@keyframes collabPopIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.collab-btn:hover, .collab-btn:focus {
+    background: linear-gradient(90deg, var(--accent-highlight) 0%, var(--text-link) 100%);
+    transform: scale(1.07) translateY(-2px) rotate(-1deg);
+    box-shadow: 0 8px 24px var(--shadow-strong);
+}
+
+.collab-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
 @media (max-width: 850px) {
