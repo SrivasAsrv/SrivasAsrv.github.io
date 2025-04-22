@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website — a digital canvas where code meets creativity.  
 This site showcases my projects, skills, interests, and journey as a learner, developer, and digital storyteller.
 
-🔗 **Live Website**: (atharvsrivastava.me)
+🔗 **Live Website**: (http://atharvsrivastava.me)[atharvsrivastava.me]
 
 ---
 
