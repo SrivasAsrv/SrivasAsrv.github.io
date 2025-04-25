@@ -1,750 +1,804 @@
 /* CSS Variables */
 :root {
-    --bg-gradient-start: #f8fafc;
-    --bg-gradient-end: #eef2ff;
-    --text-primary: #1e293b;
-    --text-secondary: #4b5563;
-    --text-accent: #3b82f6;
-    --text-accent-dark: #1e3a8a;
-    --text-link: #4f46e5;
-    --text-link-hover: #4338ca;
-    --paper-bg: white;
-    --navbar-bg: rgba(255, 255, 255, 0.85);
-    --section-bg: #fafbff;
-    --section-border: #f0f4ff;
-    --section-hover-bg: #f0f4ff;
-    --skill-bg: #e0e7ff;
-    --skill-text: #3730a3;
-    --skill-hover-bg: #c7d2fe;
-    --skill-hover-text: #1e3a8a;
-    --project-card-bg: #f1f5f9;
-    --project-card-border: #e2e8f0;
-    --project-card-hover-border: #c7d2fe;
-    --interest-bg: #eff6ff;
-    --interest-text: #1d4ed8;
-    --interest-hover-bg: #dbeafe;
-    --email-container-bg: #eef2ff;
-    --email-container-hover-bg: #dbeafe;
-    --shadow-soft: rgba(60, 72, 88, 0.06);
-    --shadow-medium: rgba(60, 72, 88, 0.08);
-    --shadow-strong: rgba(60, 72, 88, 0.1);
-    --accent-border: #dbe7fb;
-    --accent-highlight: #6366f1;
-    --focus-outline: #6366f1; /* Added focus color variable */
-    --back-to-top-bg: var(--text-link);
-    --back-to-top-hover-bg: var(--text-link-hover);
-    --back-to-top-text: white;
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #eef2ff;
+  --text-primary: #1e293b;
+  --text-secondary: #4b5563;
+  --text-accent: #3b82f6;
+  --text-accent-dark: #1e3a8a;
+  --text-link: #4f46e5;
+  --text-link-hover: #4338ca;
+  --paper-bg: white;
+  --navbar-bg: rgba(255, 255, 255, 0.85);
+  --section-bg: #fafbff;
+  --section-border: #f0f4ff;
+  --section-hover-bg: #f0f4ff;
+  --skill-bg: #e0e7ff;
+  --skill-text: #3730a3;
+  --skill-hover-bg: #c7d2fe;
+  --skill-hover-text: #1e3a8a;
+  --project-card-bg: #f1f5f9;
+  --project-card-border: #e2e8f0;
+  --project-card-hover-border: #c7d2fe;
+  --interest-bg: #eff6ff;
+  --interest-text: #1d4ed8;
+  --interest-hover-bg: #dbeafe;
+  --email-container-bg: #eef2ff;
+  --email-container-hover-bg: #dbeafe;
+  --shadow-soft: rgba(60, 72, 88, 0.06);
+  --shadow-medium: rgba(60, 72, 88, 0.08);
+  --shadow-strong: rgba(60, 72, 88, 0.1);
+  --accent-border: #dbe7fb;
+  --accent-highlight: #6366f1;
+  --focus-outline: #6366f1; /* Added focus color variable */
+  --back-to-top-bg: var(--text-link);
+  --back-to-top-hover-bg: var(--text-link-hover);
+  --back-to-top-text: white;
 }
 
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 body {
-    margin: 0;
-    padding: 2rem 1rem; /* Adjusted padding for better centering */
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(145deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%); /* Use variables */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    color: var(--text-primary); /* Use variable */
-    line-height: 1.6;
-    animation: fadeIn 0.8s ease-in-out;
+  margin: 0;
+  padding: 2rem 1rem; /* Adjusted padding for better centering */
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(
+    145deg,
+    var(--bg-gradient-start) 0%,
+    var(--bg-gradient-end) 100%
+  ); /* Use variables */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: var(--text-primary); /* Use variable */
+  line-height: 1.6;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Loading Animation Styles */
 .loader {
-    position: fixed;
-    inset: 0;
-    background-color: var(--paper-bg);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-    opacity: 1;
-    visibility: visible;
+  position: fixed;
+  inset: 0;
+  background-color: var(--paper-bg);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  opacity: 1;
+  visibility: visible;
 }
 .loader.hidden {
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 .loader-spinner {
-    border: 4px solid var(--skill-bg);
-    border-top: 4px solid var(--text-link);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
+  border: 4px solid var(--skill-bg);
+  border-top: 4px solid var(--text-link);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
 }
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--navbar-bg); /* Use variable */
-    backdrop-filter: blur(10px); /* Increased blur */
-    padding: 0.8rem 3rem;
-    box-shadow: 0 1px 4px var(--shadow-soft); /* Use variable */
-    z-index: 1000;
-    margin: -3.2rem -3rem 2rem -3rem;
-    border-radius: 16px 16px 0 0;
-    display: flex;
-    justify-content: flex-end; /* Move contents to right */
-    align-items: center; /* Vertically align items */
-    border-bottom: 1px solid var(--bg-gradient-end); /* Use variable */
-    gap: 1.2rem; /* Add gap between favicon and navbar-right */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--navbar-bg); /* Use variable */
+  backdrop-filter: blur(10px); /* Increased blur */
+  padding: 0.8rem 3rem;
+  box-shadow: 0 1px 4px var(--shadow-soft); /* Use variable */
+  z-index: 1000;
+  margin: -3.2rem -3rem 2rem -3rem;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: flex-end; /* Move contents to right */
+  align-items: center; /* Vertically align items */
+  border-bottom: 1px solid var(--bg-gradient-end); /* Use variable */
+  gap: 1.2rem; /* Add gap between favicon and navbar-right */
 }
 
 /* New: group nav links, hamburger, and favicon on right */
 .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 /* Style for favicon in navbar */
 .navbar-favicon {
-    width: 28px;
-    height: 28px;
-    margin-left: 0;
-    margin-right: 0.8rem; /* Add space to the right of favicon */
-    border-radius: 6px;
-    box-shadow: 0 1px 4px var(--shadow-soft);
-    background: white;
-    object-fit: contain;
+  width: 28px;
+  height: 28px;
+  margin-left: 0;
+  margin-right: 0.8rem; /* Add space to the right of favicon */
+  border-radius: 6px;
+  box-shadow: 0 1px 4px var(--shadow-soft);
+  background: white;
+  object-fit: contain;
 }
 
 /* Container for nav links */
 .nav-links {
-    display: flex;
-    gap: 1.8rem; /* Keep gap from navbar */
+  display: flex;
+  gap: 1.8rem; /* Keep gap from navbar */
 }
 
 .navbar a {
-    text-decoration: none;
-    color: var(--text-secondary); /* Use variable */
-    font-weight: 500;
-    transition: color 0.25s, border-bottom-color 0.25s;
-    padding: 0.4rem 0.2rem; /* Adjusted padding */
-    border-bottom: 2px solid transparent; /* Prepare for underline effect */
-    font-family: 'Roboto', sans-serif; /* Ensure consistent font */
-    border-radius: 4px; /* For focus outline */
+  text-decoration: none;
+  color: var(--text-secondary); /* Use variable */
+  font-weight: 500;
+  transition: color 0.25s, border-bottom-color 0.25s;
+  padding: 0.4rem 0.2rem; /* Adjusted padding */
+  border-bottom: 2px solid transparent; /* Prepare for underline effect */
+  font-family: "Roboto", sans-serif; /* Ensure consistent font */
+  border-radius: 4px; /* For focus outline */
 }
-.navbar a:hover, .navbar a.active {
-    color: var(--text-accent); /* Use variable */
-    border-bottom-color: var(--accent-highlight); /* Use variable */
+.navbar a:hover,
+.navbar a.active {
+  color: var(--text-accent); /* Use variable */
+  border-bottom-color: var(--accent-highlight); /* Use variable */
 }
 
 /* Focus style for navbar links */
 .navbar a:focus {
-    outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
-    color: var(--text-accent); /* Ensure focus is visible */
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+  color: var(--text-accent); /* Ensure focus is visible */
 }
 
 /* Hamburger Menu Button */
 .hamburger {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001; /* Ensure it's above other navbar content */
-    border-radius: 4px; /* For focus outline */
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* Ensure it's above other navbar content */
+  border-radius: 4px; /* For focus outline */
 }
 
 .hamburger span {
-    display: block;
-    width: 2rem;
-    height: 3px;
-    background-color: var(--text-secondary); /* Use variable */
-    border-radius: 2px;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Refined transition */
-    transform-origin: center;
+  display: block;
+  width: 2rem;
+  height: 3px;
+  background-color: var(--text-secondary); /* Use variable */
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Refined transition */
+  transform-origin: center;
 }
 
 /* Hamburger animation */
 /* Modify the X transformation for a different look */
 .hamburger.active span:nth-child(1) {
-    transform: translateY(5px) rotate(20deg);
+  transform: translateY(5px) rotate(20deg);
 }
 .hamburger.active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
-    transform: translateY(-5px) rotate(-20deg);
+  transform: translateY(-5px) rotate(-20deg);
 }
 
 /* Focus style for hamburger */
 .hamburger:focus {
-    outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
 }
 
 .paper {
-    width: 794px;
-    min-height: 1123px;
-    background: var(--paper-bg); /* Use variable */
-    box-shadow: 0 10px 30px var(--shadow-medium); /* Use variable */
-    border-radius: 16px;
-    border: none;
-    padding: 3.2rem 3rem 2.2rem 3rem;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-    animation: slideUp 0.5s ease-out forwards;
-    position: relative;
-    max-width: 794px; /* Ensure max-width is respected */
-    margin: 0 auto; /* Center paper if body padding isn't enough */
+  width: 794px;
+  min-height: 1123px;
+  background: var(--paper-bg); /* Use variable */
+  box-shadow: 0 10px 30px var(--shadow-medium); /* Use variable */
+  border-radius: 16px;
+  border: none;
+  padding: 3.2rem 3rem 2.2rem 3rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease-out forwards;
+  position: relative;
+  max-width: 794px; /* Ensure max-width is respected */
+  margin: 0 auto; /* Center paper if body padding isn't enough */
 }
 
 @keyframes slideUp {
-    from { transform: translateY(15px); }
-    to { transform: translateY(0); }
+  from {
+    transform: translateY(15px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 h1 {
-    margin: 0;
-    font-size: 2.7rem;
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-    color: var(--text-primary); /* Use variable */
-    text-align: center;
-    position: relative;
-    animation: fadeInDelayed 0.8s ease-in-out forwards;
-    animation-delay: 0.2s;
-    opacity: 0;
+  margin: 0;
+  font-size: 2.7rem;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  color: var(--text-primary); /* Use variable */
+  text-align: center;
+  position: relative;
+  animation: fadeInDelayed 0.8s ease-in-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
 @keyframes fadeInDelayed {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .tagline {
-    font-size: 1.18rem;
-    color: var(--text-secondary); /* Use variable */
-    margin-bottom: 2.2rem;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    animation: fadeInDelayed 0.8s ease-in-out forwards;
-    animation-delay: 0.4s;
-    opacity: 0;
+  font-size: 1.18rem;
+  color: var(--text-secondary); /* Use variable */
+  margin-bottom: 2.2rem;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  animation: fadeInDelayed 0.8s ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
 }
 
 .section {
-    margin-bottom: 2.5rem;
-    padding: 1.8rem 1.6rem;
-    background: var(--section-bg); /* Use variable */
-    border-radius: 14px;
-    box-shadow: 0 2px 6px rgba(60, 72, 88, 0.01); /* Low opacity shadow */
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-    animation: fadeInDelayed 0.8s ease-in-out forwards;
-    animation-delay: 0.6s;
-    opacity: 0;
-    border: 1px solid var(--section-border); /* Use variable */
+  margin-bottom: 2.5rem;
+  padding: 1.8rem 1.6rem;
+  background: var(--section-bg); /* Use variable */
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(60, 72, 88, 0.01); /* Low opacity shadow */
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: fadeInDelayed 0.8s ease-in-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  border: 1px solid var(--section-border); /* Use variable */
 }
 
 .section:hover {
-    box-shadow: 0 4px 12px var(--shadow-medium); /* Use variable */
+  box-shadow: 0 4px 12px var(--shadow-medium); /* Use variable */
 }
 
 .section-title {
-    font-weight: bold;
-    font-size: 1.32rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    color: var(--text-accent); /* Use variable */
-    border-bottom: 1px solid var(--accent-border); /* Use variable */
-    position: relative;
-    font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  font-size: 1.32rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  color: var(--text-accent); /* Use variable */
+  border-bottom: 1px solid var(--accent-border); /* Use variable */
+  position: relative;
+  font-family: "Playfair Display", serif;
 }
 
 .section-title::before {
-    content: '';
-    display: inline-block;
-    width: 28px;
-    height: 3px;
-    background: var(--accent-highlight); /* Use variable */
-    border-radius: 2px;
-    position: absolute;
-    left: 0;
-    bottom: -2px;
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background: var(--accent-highlight); /* Use variable */
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
 }
 
 .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
 }
 
 .skill {
-    background: var(--skill-bg); /* Use variable */
-    padding: 0.55rem 1.15rem;
-    border-radius: 22px;
-    font-size: 1rem;
-    color: var(--skill-text); /* Use variable */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    box-shadow: 0 1px 3px var(--shadow-soft); /* Use variable */
-    transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
-    cursor: default; /* Indicate non-interactive */
+  background: var(--skill-bg); /* Use variable */
+  padding: 0.55rem 1.15rem;
+  border-radius: 22px;
+  font-size: 1rem;
+  color: var(--skill-text); /* Use variable */
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  box-shadow: 0 1px 3px var(--shadow-soft); /* Use variable */
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: default; /* Indicate non-interactive */
 }
 
 .skill:hover {
-    background: var(--skill-hover-bg); /* Use variable */
-    color: var(--skill-hover-text); /* Use variable */
-    box-shadow: 0 3px 10px var(--shadow-strong); /* Use variable */
-    transform: translateY(-2px);
+  background: var(--skill-hover-bg); /* Use variable */
+  color: var(--skill-hover-text); /* Use variable */
+  box-shadow: 0 3px 10px var(--shadow-strong); /* Use variable */
+  transform: translateY(-2px);
 }
 
 .skill::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    transition: height 0.2s ease;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: height 0.2s ease;
 }
 
 .skill:hover::after {
-    height: 50%;
+  height: 50%;
 }
 
 .socials {
-    display: flex;
-    gap: 1.6rem;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    justify-content: center;
+  display: flex;
+  gap: 1.6rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
 }
 
 .socials a {
-    text-decoration: none;
-    color: var(--text-primary); /* Use variable */
-    transition: all 0.3s;
-    position: relative;
-    border-radius: 4px; /* For focus outline */
+  text-decoration: none;
+  color: var(--text-primary); /* Use variable */
+  transition: all 0.3s;
+  position: relative;
+  border-radius: 4px; /* For focus outline */
 }
 
 .socials a:hover {
-    color: var(--text-accent); /* Use variable */
-    transform: translateY(-3px);
+  color: var(--text-accent); /* Use variable */
+  transform: translateY(-3px);
 }
 
 socials a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: var(--text-accent); /* Use variable */
-    bottom: -4px;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-    opacity: 0;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--text-accent); /* Use variable */
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  opacity: 0;
 }
 
 .socials a:hover::after {
-    transform: scaleX(1);
-    opacity: 1;
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 /* Focus style for social links */
 .socials a:focus {
-    outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
-    color: var(--text-accent); /* Ensure focus is visible */
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+  color: var(--text-accent); /* Ensure focus is visible */
 }
 
 .contact-links {
-    text-align: center;
-    margin-top: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .email-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--email-container-bg); /* Use variable */
-    padding: 0.6rem 1.2rem;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--email-container-bg); /* Use variable */
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
 
 .email-container:hover {
-    background: var(--email-container-hover-bg); /* Use variable */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1); /* Specific shadow */
+  background: var(--email-container-hover-bg); /* Use variable */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1); /* Specific shadow */
 }
 
 .email-container i {
-    margin-right: 0.7rem;
-    color: var(--text-link); /* Use variable */
+  margin-right: 0.7rem;
+  color: var(--text-link); /* Use variable */
 }
 
 .contact-links a {
-    color: var(--text-link); /* Use variable */
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 4px; /* For focus outline */
+  color: var(--text-link); /* Use variable */
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px; /* For focus outline */
 }
 
 .contact-links a:hover {
-    color: var(--text-link-hover); /* Use variable */
+  color: var(--text-link-hover); /* Use variable */
 }
 
 /* Focus style for email link */
 .contact-links a:focus {
-    outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
-    color: var(--text-link-hover); /* Ensure focus is visible */
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+  color: var(--text-link-hover); /* Ensure focus is visible */
 }
 
 ul {
-    margin: 1rem 0 0.2rem 1.2rem;
-    padding: 0;
+  margin: 1rem 0 0.2rem 1.2rem;
+  padding: 0;
 }
 
 ul li {
-    margin-bottom: 0.5rem;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.03rem;
-    color: var(--text-secondary); /* Use variable */
+  margin-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.03rem;
+  color: var(--text-secondary); /* Use variable */
 }
 
 footer {
-    text-align: center;
-    color: var(--text-secondary); /* Use variable */
-    margin-top: 2.5rem;
-    font-size: 0.92rem;
-    animation: fadeInDelayed 0.8s ease-in-out forwards;
-    animation-delay: 0.8s;
-    opacity: 0;
+  text-align: center;
+  color: var(--text-secondary); /* Use variable */
+  margin-top: 2.5rem;
+  font-size: 0.92rem;
+  animation: fadeInDelayed 0.8s ease-in-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
 }
 
 /* Education Section Styles */
 .education-item {
-    margin-bottom: 1.5rem;
-    padding: 0.5rem; /* Add some padding for hover effect */
-    border-radius: 8px; /* Rounded corners for hover */
-    transition: background-color 0.25s ease; /* Smooth transition */
+  margin-bottom: 1.5rem;
+  padding: 0.5rem; /* Add some padding for hover effect */
+  border-radius: 8px; /* Rounded corners for hover */
+  transition: background-color 0.25s ease; /* Smooth transition */
 }
 .education-item:hover {
-    background-color: var(--section-hover-bg); /* Use variable */
+  background-color: var(--section-hover-bg); /* Use variable */
 }
 .edu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
 }
 .edu-degree {
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: var(--text-accent-dark); /* Use variable */
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--text-accent-dark); /* Use variable */
 }
 
 .edu-school {
-    font-size: 1rem;
-    color: var(--text-secondary); /* Use variable */
-    margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-secondary); /* Use variable */
+  margin-bottom: 0.5rem;
 }
 .edu-details {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 /* Projects Section Styles */
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.3rem;
 }
 .project-card {
-    background: var(--project-card-bg); /* Use variable */
-    border-radius: 12px;
-    padding: 1.2rem;
-    transition: all 0.25s ease;
-    border: 1px solid var(--project-card-border); /* Use variable */
-    cursor: default; /* Indicate non-interactive */
+  background: var(--project-card-bg); /* Use variable */
+  border-radius: 12px;
+  padding: 1.2rem;
+  transition: all 0.25s ease;
+  border: 1px solid var(--project-card-border); /* Use variable */
+  cursor: default; /* Indicate non-interactive */
 }
 .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px var(--shadow-strong); /* Use variable */
-    border-color: var(--project-card-hover-border); /* Use variable */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px var(--shadow-strong); /* Use variable */
+  border-color: var(--project-card-hover-border); /* Use variable */
 }
 .project-title {
-    font-weight: 500;
-    font-size: 1.05rem;
-    margin-bottom: 0.6rem;
-    color: var(--text-accent-dark); /* Use variable */
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-accent-dark); /* Use variable */
 }
 .project-desc {
-    font-size: 0.95rem;
-    color: var(--text-secondary); /* Use variable */
-    margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary); /* Use variable */
+  margin-bottom: 1rem;
 }
 .project-tech {
-    font-size: 0.85rem;
-    color: var(--text-secondary); /* Use variable */
+  font-size: 0.85rem;
+  color: var(--text-secondary); /* Use variable */
 }
 
 /* Professional Interests */
 .interests-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .interest-item {
-    background: var(--interest-bg); /* Use variable */
-    padding: 0.5rem 1.1rem;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    color: var(--interest-text); /* Use variable */
-    transition: all 0.25s ease, transform 0.2s ease; /* Add transform transition */
-    cursor: default; /* Indicate non-interactive */
+  background: var(--interest-bg); /* Use variable */
+  padding: 0.5rem 1.1rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  color: var(--interest-text); /* Use variable */
+  transition: all 0.25s ease, transform 0.2s ease; /* Add transform transition */
+  cursor: default; /* Indicate non-interactive */
 }
 .interest-item:hover {
-    background: var(--interest-hover-bg); /* Use variable */
-    transform: translateY(-2px) scale(1.03); /* Add scale effect */
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1); /* Specific shadow */
+  background: var(--interest-hover-bg); /* Use variable */
+  transform: translateY(-2px) scale(1.03); /* Add scale effect */
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1); /* Specific shadow */
 }
 
 /* Back to Top Button Styles */
 .back-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--back-to-top-bg);
-    color: var(--back-to-top-text);
-    border: none;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 2px 10px var(--shadow-medium);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--back-to-top-bg);
+  color: var(--back-to-top-text);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px var(--shadow-medium);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease,
+    background-color 0.3s ease;
+  z-index: 1000;
 }
 .back-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 .back-to-top:hover {
-    background-color: var(--back-to-top-hover-bg);
-    transform: translateY(-2px);
+  background-color: var(--back-to-top-hover-bg);
+  transform: translateY(-2px);
 }
 .back-to-top:focus {
-    outline: 2px solid var(--focus-outline);
-    outline-offset: 2px;
-    background-color: var(--back-to-top-hover-bg); /* Ensure focus is visible */
+  outline: 2px solid var(--focus-outline);
+  outline-offset: 2px;
+  background-color: var(--back-to-top-hover-bg); /* Ensure focus is visible */
 }
 
 .profile-pic-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 
 .profile-pic {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    background: none;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
 }
 
 .collab-btn {
-    margin: 1.2rem 0 2rem 0;
-    padding: 0.85rem 2.2rem;
-    font-size: 1.15rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(90deg, var(--text-link) 0%, var(--accent-highlight) 100%);
-    border: none;
-    border-radius: 30px;
-    box-shadow: 0 4px 18px var(--shadow-medium);
-    cursor: pointer;
-    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, background 0.3s;
-    outline: none;
-    position: relative;
-    z-index: 1;
-    animation: collabPopIn 0.8s cubic-bezier(.4,2,.6,1) 0.7s both;
+  margin: 1.2rem 0 2rem 0;
+  padding: 0.85rem 2.2rem;
+  font-size: 1.15rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    var(--text-link) 0%,
+    var(--accent-highlight) 100%
+  );
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 18px var(--shadow-medium);
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.18s,
+    background 0.3s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+  animation: collabPopIn 0.8s cubic-bezier(0.4, 2, 0.6, 1) 0.7s both;
 }
 
 @keyframes collabPopIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.7) translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.7) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-.collab-btn:hover, .collab-btn:focus {
-    background: linear-gradient(90deg, var(--accent-highlight) 0%, var(--text-link) 100%);
-    transform: scale(1.07) translateY(-2px) rotate(-1deg);
-    box-shadow: 0 8px 24px var(--shadow-strong);
+.collab-btn:hover,
+.collab-btn:focus {
+  background: linear-gradient(
+    90deg,
+    var(--accent-highlight) 0%,
+    var(--text-link) 100%
+  );
+  transform: scale(1.07) translateY(-2px) rotate(-1deg);
+  box-shadow: 0 8px 24px var(--shadow-strong);
 }
 
 .collab-btn:active {
-    transform: scale(0.97);
-    box-shadow: 0 2px 8px var(--shadow-medium);
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
 @media (max-width: 850px) {
-    body {
-        padding: 1rem; /* Reduced padding for smaller screens */
-    }
+  body {
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
 
-    .paper {
-        width: 100%; /* Full width on smaller screens */
-        min-width: unset;
-        padding: 2rem 1.5rem; /* Adjusted padding */
-        border-radius: 12px;
-    }
+  .paper {
+    width: 100%; /* Full width on smaller screens */
+    min-width: unset;
+    padding: 2rem 1.5rem; /* Adjusted padding */
+    border-radius: 12px;
+  }
 
-    h1 {
-        font-size: 2.2rem; /* Smaller heading */
-    }
+  h1 {
+    font-size: 2.2rem; /* Smaller heading */
+  }
 
-    .tagline {
-        font-size: 1.1rem; /* Smaller tagline */
-    }
+  .tagline {
+    font-size: 1.1rem; /* Smaller tagline */
+  }
 
-    .section {
-        padding: 1.2rem 1rem; /* Reduced section padding */
-    }
+  .section {
+    padding: 1.2rem 1rem; /* Reduced section padding */
+  }
 
-    .navbar {
-        padding: 0.7rem 1.5rem; /* Adjust padding for hamburger */
-        margin: -2rem -1.5rem 1.5rem -1.5rem;
-        justify-content: flex-end; /* Keep right alignment on mobile */
-        /* gap removed, justify-content handles spacing */
-        gap: 0.8rem;
-    }
+  .navbar {
+    padding: 0.7rem 1.5rem; /* Adjust padding for hamburger */
+    margin: -2rem -1.5rem 1.5rem -1.5rem;
+    justify-content: flex-end; /* Keep right alignment on mobile */
+    /* gap removed, justify-content handles spacing */
+    gap: 0.8rem;
+  }
 
-    .navbar-right {
-        gap: 0.8rem;
-    }
+  .navbar-right {
+    gap: 0.8rem;
+  }
 
-    .navbar-favicon {
-        width: 24px;
-        height: 24px;
-        margin-right: 0.5rem;
-    }
+  .navbar-favicon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
 
-    .hamburger {
-        display: flex; /* Show hamburger on mobile */
-        margin-left: auto; /* Push hamburger to the right */
-    }
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+    margin-left: auto; /* Push hamburger to the right */
+  }
 
-    .nav-links {
-        display: none; /* Hide links by default on mobile */
-        position: absolute;
-        top: 100%; /* Position below navbar */
-        left: 0;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(5px);
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
-        box-shadow: 0 4px 6px rgba(60, 72, 88, 0.1);
-        border-radius: 0 0 12px 12px; /* Match paper radius */
-    }
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    position: absolute;
+    top: 100%; /* Position below navbar */
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(60, 72, 88, 0.1);
+    border-radius: 0 0 12px 12px; /* Match paper radius */
+  }
 
-    .nav-links.active {
-        display: flex; /* Show links when active */
-    }
+  .nav-links.active {
+    display: flex; /* Show links when active */
+  }
 
-    .navbar a {
-        padding: 0.8rem 1rem; /* More padding for touch targets */
-        width: 100%;
-        text-align: center;
-        border-bottom: none; /* Remove bottom border for mobile */
-    }
-     .navbar a:hover, .navbar a.active {
-         border-bottom-color: transparent; /* Ensure no border on mobile hover/active */
-         background-color: var(--section-hover-bg); /* Use variable */
-     }
+  .navbar a {
+    padding: 0.8rem 1rem; /* More padding for touch targets */
+    width: 100%;
+    text-align: center;
+    border-bottom: none; /* Remove bottom border for mobile */
+  }
+  .navbar a:hover,
+  .navbar a.active {
+    border-bottom-color: transparent; /* Ensure no border on mobile hover/active */
+    background-color: var(--section-hover-bg); /* Use variable */
+  }
 
-    .back-to-top {
-        bottom: 1rem;
-        right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
 @media print {
-    body {
-        background: none;
-        padding: 0;
-    }
+  body {
+    background: none;
+    padding: 0;
+  }
 
-    .paper {
-        box-shadow: none;
-        border: none;
-        width: 100%;
-        min-height: auto;
-        padding: 0;
-    }
+  .paper {
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+  }
 
-    .section {
-        box-shadow: none;
-        page-break-inside: avoid;
-        border: 1px solid #eee;
-    }
+  .section {
+    box-shadow: none;
+    page-break-inside: avoid;
+    border: 1px solid #eee;
+  }
 
-    .skill:hover, .socials a:hover {
-        transform: none;
-    }
+  .skill:hover,
+  .socials a:hover {
+    transform: none;
+  }
 
-    @page {
-        margin: 1.5cm;
-    }
-    .loader, .back-to-top, .navbar {
-        display: none; /* Hide loader, button, and navbar when printing */
-    }
+  @page {
+    margin: 1.5cm;
+  }
+  .loader,
+  .back-to-top,
+  .navbar {
+    display: none; /* Hide loader, button, and navbar when printing */
+  }
+}
+
+.name-cursive {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0;
+  /* Keep animation and other h1 styles if needed */
+}
+
+.name-highlight {
+  color: #FFD600;
+  text-shadow: 0 2px 8px rgba(255, 214, 0, 0.18);
+  font-size: 1.15em;
+  letter-spacing: 2px;
 }
